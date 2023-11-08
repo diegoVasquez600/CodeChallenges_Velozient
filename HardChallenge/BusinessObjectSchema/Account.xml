@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<businessObject>
+	<propertyGroup>
+		<property name="Id" type="int" />
+		<property name="Name" type="string" />
+	</propertyGroup>
+	<script>
+		CREATE TABLE Account (
+			Id INTEGER PRIMARY KEY,
+			Name TEXT
+		);
+	</script>
+</businessObject>
