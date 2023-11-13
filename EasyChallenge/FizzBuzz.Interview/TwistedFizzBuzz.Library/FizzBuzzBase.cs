@@ -8,7 +8,6 @@ namespace TwistedFizzBuzz.Library
 {
     public class FizzBuzzBase
     {
-        // public abstract void GetOutput(int start, int end);
         /// <summary>
         /// Returns true if number is a multiple of multiple parameter otherwise false
         /// </summary>

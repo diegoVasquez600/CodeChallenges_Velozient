@@ -9,23 +9,7 @@ namespace TwistedFizzBuzz.Library
 {
     public class FizzBuzz : FizzBuzzBase, IFizzBuzz
     {
-        // TODO: Implement Original FizzBuzz
-        public void GetOutput(int start, int end)
-        {
-            try
-            {
-                var output = GenerateFizzBuzz(start, end);
-                foreach (var result in output)
-                {
-                    Console.WriteLine(result);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
-        }
+        // DONE: Implement Original FizzBuzz
 
         public List<string> GenerateFizzBuzz(int start, int end)
         {
@@ -73,6 +57,56 @@ namespace TwistedFizzBuzz.Library
                         _ => number.ToString(),
                     };
                     output.Add(result);
+                }
+                return output;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public List<string> GenerateFizzBuzz(int start, int end, List<(int divisor, string token)> divisorTokenPairs)
+        {
+            try
+            {
+                string result;
+                List<string> output = new();
+                for (int number = start; number <= end; number++)
+                {
+                    //DONE: Read divisorTokenPairs and use them to determine the output
+                    foreach (var (divisor, token) in divisorTokenPairs)
+                    {
+                        bool isMultipleOfDivisor = CanBeMultipleOf(number, divisor);
+                        result = isMultipleOfDivisor ? token : number.ToString();
+                        output.Add(result);
+                    }
+                }
+                return output;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public List<string> GenerateFizzBuzz(int[] numbers, List<(int divisor, string token)> divisorTokenPairs)
+        {
+            try
+            {
+                string result;
+                List<string> output = new();
+                foreach (var number in numbers)
+                {
+                    //DONE: Read divisorTokenPairs and use them to determine the output
+                    foreach (var (divisor, token) in divisorTokenPairs)
+                    {
+                        bool isMultipleOfDivisor = CanBeMultipleOf(number, divisor);
+                        result = isMultipleOfDivisor ? token : number.ToString();
+                        output.Add(result);
+                    }
                 }
                 return output;
             }
