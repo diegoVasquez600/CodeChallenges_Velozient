@@ -39,7 +39,7 @@ namespace TwistedFizzBuzz.Library
         /// A string composed of tokens associated with factors for which the <paramref name="number"/> is a multiple.
         /// If no factors match, the method returns the string representation of the original <paramref name="number"/>.
         /// </returns>
-        internal virtual string GetCustomTokenDivisorOutput(int number, int[] multiples, string[] tokens)
+        public virtual string GetCustomTokenDivisorOutput(int number, int[] multiples, string[] tokens)
         {
             string result = "";
             for (int index = 0; index < multiples.Length; index++)
