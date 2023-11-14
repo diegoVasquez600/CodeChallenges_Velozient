@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TwistedFizzBuzz.Library.Models;
 
 namespace TwistedFizzBuzz.Library.Interfaces
 {
@@ -15,5 +16,6 @@ namespace TwistedFizzBuzz.Library.Interfaces
         //DONE: Implement with alternative tokens and divisors: Accept user input for alternative tokens instead of "Fizz" and "Buzz" and alternative divisors instead of 3 and 5. For example, 7, 17, and 3 would use "Poem", "Writer", and "College". 119 would output "PoemWriter", 51 would output "WriterCollege", 21 would output "PoemCollege, and 357 would output "PoemWriterCollege"
         List<string> GenerateFizzBuzz(int start, int end, List<(int divisor, string token)> divisorTokenPairs);
         List<string> GenerateFizzBuzz(int[] numbers, List<(int divisor, string token)> divisorTokenPairs);
+        List<string> GenerateFizzBuzz(int start, int end, APIToken token);
     }
 }

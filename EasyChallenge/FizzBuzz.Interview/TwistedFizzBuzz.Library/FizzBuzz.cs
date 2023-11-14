@@ -1,16 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TwistedFizzBuzz.Library.Interfaces;
+using TwistedFizzBuzz.Library.Models;
 
 namespace TwistedFizzBuzz.Library
 {
     public class FizzBuzz : FizzBuzzBase, IFizzBuzz
     {
-        // DONE: Implement Original FizzBuzz
-
         public List<string> GenerateFizzBuzz(int start, int end)
         {
             try
@@ -73,15 +73,12 @@ namespace TwistedFizzBuzz.Library
             {
                 string result;
                 List<string> output = new();
+                int[] divisors = divisorTokenPairs.Select(x => x.divisor).ToArray();
+                string[] tokens = divisorTokenPairs.Select(x => x.token).ToArray();
                 for (int number = start; number <= end; number++)
                 {
-                    //DONE: Read divisorTokenPairs and use them to determine the output
-                    foreach (var (divisor, token) in divisorTokenPairs)
-                    {
-                        bool isMultipleOfDivisor = CanBeMultipleOf(number, divisor);
-                        result = isMultipleOfDivisor ? token : number.ToString();
-                        output.Add(result);
-                    }
+                    result = GetCustomTokenDivisorOutput(number, divisors, tokens);
+                    output.Add(result);
                 }
                 return output;
             }
@@ -98,15 +95,34 @@ namespace TwistedFizzBuzz.Library
             {
                 string result;
                 List<string> output = new();
+                int[] divisors = divisorTokenPairs.Select(x => x.divisor).ToArray();
+                string[] tokens = divisorTokenPairs.Select(x => x.token).ToArray();
                 foreach (var number in numbers)
                 {
-                    //DONE: Read divisorTokenPairs and use them to determine the output
-                    foreach (var (divisor, token) in divisorTokenPairs)
-                    {
-                        bool isMultipleOfDivisor = CanBeMultipleOf(number, divisor);
-                        result = isMultipleOfDivisor ? token : number.ToString();
-                        output.Add(result);
-                    }
+                    result = GetCustomTokenDivisorOutput(number, divisors, tokens);
+                    output.Add(result);
+                }
+                return output;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public List<string> GenerateFizzBuzz(int start, int end, APIToken token)
+        {
+            try
+            {
+                string result;
+                List<string> output = new();
+                int[] divisors = { token.Multiple };
+                string[] tokens = { token.Word };
+                for (int number = start; number <= end; number++)
+                {
+                    result = GetCustomTokenDivisorOutput(number, divisors, tokens);
+                    output.Add(result);
                 }
                 return output;
             }
