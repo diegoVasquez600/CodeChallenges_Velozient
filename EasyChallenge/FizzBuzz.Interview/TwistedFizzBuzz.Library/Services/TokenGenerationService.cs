@@ -4,9 +4,15 @@ using TwistedFizzBuzz.Library.Services.Interfaces;
 
 namespace TwistedFizzBuzz.Library.Services
 {
+    /// <summary>
+    /// Service for generating API tokens through HTTP requests.
+    /// </summary>
     internal class TokenGenerationService : ITokenGenerationService
     {
         private readonly HttpClient _client;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenGenerationService"/> class.
+        /// </summary>
         public TokenGenerationService()
         {
             _client = new HttpClient
@@ -15,6 +21,12 @@ namespace TwistedFizzBuzz.Library.Services
             };
         }
 
+        /// <summary>
+        /// Asynchronously generates a random API token.
+        /// </summary>
+        /// <returns>
+        /// A task representing the asynchronous operation. The task result contains the generated API token.
+        /// </returns>
         public async Task<APIToken> GenerateRandomTokenAsync()
         {
             try

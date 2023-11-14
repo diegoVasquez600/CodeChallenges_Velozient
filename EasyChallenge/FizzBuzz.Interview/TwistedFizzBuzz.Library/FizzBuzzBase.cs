@@ -50,6 +50,12 @@ namespace TwistedFizzBuzz.Library
             return result;
         }
 
+        /// <summary>
+        /// Asynchronously retrieves an API-generated token.
+        /// </summary>
+        /// <returns>
+        /// A task representing the asynchronous operation. The task result contains the retrieved API token.
+        /// </returns>
         public virtual async Task<APIToken> GetAPIGeneratedTokenAsync()
         {
             try

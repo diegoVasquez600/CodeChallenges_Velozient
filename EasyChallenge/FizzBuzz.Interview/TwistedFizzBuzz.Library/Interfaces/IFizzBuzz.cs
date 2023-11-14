@@ -5,7 +5,7 @@ namespace TwistedFizzBuzz.Library.Interfaces
     public interface IFizzBuzz
     {
         /// <summary>
-        /// fddsddd
+        ///
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
