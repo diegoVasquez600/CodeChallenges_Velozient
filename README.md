@@ -8,3 +8,5 @@ In this challenge, I tackled the problem of creating a C# library named TwistedF
 ### Solution Video
 I have provided a detailed video explanation of how I approached and solved this challenge. You can watch the video here.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nPy_HUD9znI?si=Kcv5Qrv9QovgSS9S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
