@@ -3,7 +3,7 @@
 Console.WriteLine("Custom FizzBuzz Output Program");
 int start = -20;
 int end = 127;
-List< (int, string)> divisorTokenPairs = new()
+List<(int, string)> divisorTokenPairs = new()
 {
     (5, "Fizz"),
     (9, "Buzz"),
