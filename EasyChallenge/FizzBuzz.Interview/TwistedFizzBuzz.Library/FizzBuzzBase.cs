@@ -32,19 +32,27 @@ namespace TwistedFizzBuzz.Library
         /// </returns>
         public virtual string GetCustomTokenDivisorOutput(int number, int[] multiples, string[] tokens)
         {
-            string result = "";
-            for (int index = 0; index < multiples.Length; index++)
+            try
             {
-                if (CanBeMultipleOf(number, multiples[index]))
+                string result = "";
+                for (int index = 0; index < multiples.Length; index++)
                 {
-                    result += tokens[index];
+                    if (CanBeMultipleOf(number, multiples[index]))
+                    {
+                        result += tokens[index];
+                    }
                 }
+                if (result == "")
+                {
+                    result = number.ToString();
+                }
+                return result;
             }
-            if (result == "")
+            catch (Exception ex)
             {
-                result = number.ToString();
+                Console.WriteLine(ex.Message);
+                throw;
             }
-            return result;
         }
 
         /// <summary>

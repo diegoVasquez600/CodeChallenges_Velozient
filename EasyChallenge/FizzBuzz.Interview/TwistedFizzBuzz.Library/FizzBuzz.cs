@@ -36,7 +36,7 @@ namespace TwistedFizzBuzz.Library
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                HandleException(ex);
                 throw;
             }
         }
@@ -71,7 +71,7 @@ namespace TwistedFizzBuzz.Library
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                HandleException(ex);
                 throw;
             }
         }
@@ -105,7 +105,7 @@ namespace TwistedFizzBuzz.Library
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                HandleException(ex);
                 throw;
             }
         }
@@ -138,7 +138,7 @@ namespace TwistedFizzBuzz.Library
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                HandleException(ex);
                 throw;
             }
         }
@@ -171,9 +171,18 @@ namespace TwistedFizzBuzz.Library
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                HandleException(ex);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Handles an exception by performing appropriate actions.
+        /// </summary>
+        /// <param name="ex">The exception to be handled.</param>
+        private static void HandleException(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
         }
     }
 }
