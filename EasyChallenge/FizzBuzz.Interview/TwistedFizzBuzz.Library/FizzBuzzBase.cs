@@ -17,11 +17,8 @@ namespace TwistedFizzBuzz.Library
         ///   <c>true</c> if the <paramref name="number"/> is a multiple of the <paramref name="multiple"/> parameter;
         ///   otherwise, <c>false</c>.
         /// </returns>
-        internal virtual bool CanBeMultipleOf(int number, int multiple)
-        {
-            return (number % multiple) == 0;
-        }
-
+        internal virtual bool CanBeMultipleOf(int number, int multiple) => (number % multiple) == 0;
+        
         /// <summary>
         /// Generates a custom tokenized output based on whether the given number is a multiple
         /// of specified factors, using corresponding tokens.
